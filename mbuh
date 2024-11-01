@@ -1,0 +1,15 @@
+# .htaccess
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]
+
+# .htaccess
+Options +FollowSymLinks
+RewriteEngine On
+
+# Redirect semua permintaan ke folder public
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule ^(.*)$ /public/$1 [L]
